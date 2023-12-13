@@ -2,42 +2,15 @@
 import random
 import pygame
 import os
-try:
-    os.chdir("SOURCE")
-except:
-    pass
+import dotenv
+
 import json
 import cryptography.fernet
 import sys
 import smtplib, ssl
-import my_mdp
 from email.message import EmailMessage
-#prochain ajout: (debut : 5,05,2023)
-#ajouter une description au item (fini : 9.05.2023)
-#Reglage input(faire tout avec keydown)
-#ajouter un drop attaque
-#ajouter des items
-#ajouter des attaques
-#ajouter le fait de gerer ses stats seul
-#faire une interface d'attaque
-"""
-    -TOUTE les musiques utilisées dans ce jeux on été pris sur pixabay Music
-    -si vous ouvrez ce code sur un editeur de code et que vous
-    n'arrivez pas a ouvrir les fichiers ogg, veuiller utiliser Thonny
-    -equipe de travail : HERMANTIN Shai, PELAGE--MAXIME Sylvio, Deecleane 1erG
-    -si vous ne possedez pas pygame, ecriver dans le cmd :
-    pip install pygame;si vous utiliser thonny, rendez vous dans tool > manages packages et ecriver pygame > installer la
-    version game developpment
-    module a installer :
-        pygame
-        cryptography
-    -Si vous voyez de message c'est que vous n'utiliser pas l'application lié a se programme.
-    Ce jeu est disponible en .exe et
-    vous n'aurez pas a installer les modules nécessaires
-    -il se peut que votre vitesse soit trop elevé, votre acceleration trop forte voir meme une animation trop rapide
-    car étant donnée que quasiment tout est fait sur l'ordi de sylvio qui possède des problemes, ses reglages a lui son un peu booster
-    -Si vous rencontrez ne serait-ce qu'un bug mineur j'en suis désolé, veuillez le signalez et je le reglerais. (adresse dans le doc .txt)
-"""
+
+env = dotenv.dotenv_values()
 pygame.init()
 pygame.mixer.init()
 pygame.display.init()
@@ -47,18 +20,20 @@ music_played_all_time = []
 music_already_played = ["the_dying_main.ogg","boss_assassin_main.ogg","game_over_main.ogg","boss_mage_main.ogg","boss_chevalier_main.ogg"]
 volume = 0.75
 def get_volume(id_ = 0):
+    """
+        fonction permettant de regler le volume de la music
+        :param 1: indice pour verifier l'action a appliquer sur le volume
+    """
     global volume
     if id_ == 1:
         volume += 0.1
     elif id_ == -1:
         volume -= 0.1
     return volume
-    """
-        fonction permettant de regler le volume de la music
-        :param 1: indice pour verifier l'action a appliquer sur le volume
-    """
+    
 global pause
 pause = False
+
 def make_music(dossier_music = os.listdir('playlist_music'), id_ = 0):
     """
         fonction permettant de jouer une music et qui change de music quand aucune n'est joué
@@ -480,6 +455,7 @@ def py_start():
     #color_here
 
     color_pick = {"bordeaux_f" : (153,0,0),"orange" : (255,102,0),"rose" : (255,51,153), "marron" : (102,51,0),"mauve" : (153,0,204),"vert_f": (51,153,0),"bleu_f" : (51,51,153), "bordeaux" : (153,0,0), "cyan" : (0,204,204), "cyan_f" :(0,153,153), "noir" : (0,0,0), "blanc" : (255,255,255), "violet_rouge" : (159,0,76), "vert_bleu" : (0,102,102), "gris" : (100,100,100), 'gris_f' : (80,80,80), "jaune" : (255,255,0), "rouge" : (255,0,0), "bleu" : (0,0,255), 'vert' : (0,255,0)}
+    
     def get_dimension(text, font,size, pos = False, font_import = False):
         if pos == False:
             """  
@@ -1611,7 +1587,8 @@ def py_start():
                     context=ssl.create_default_context()
                     with smtplib.SMTP('smtp.gmail.com', port=587) as smtp:
                         smtp.starttls(context=context)
-                        smtp.login(msg["To"] ,my_mdp.mdp())
+                        #Clé smtp
+                        smtp.login(msg["To"] ,env.get("MDP_EMAIL"))
                         smtp.send_message(msg)
                         finish = True
                 if mouse_click[0] and not is_valid:
