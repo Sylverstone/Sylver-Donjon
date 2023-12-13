@@ -1,0 +1,91 @@
+save : 2
+nom
+gg
+class
+Assassin
+exp
+0
+gold
+0
+exp_need
+69
+level
+1
+repos_left
+4
+force
+2
+vol de vie
+0
+vie
+110
+reflexe
+5
+energie
+150
+magie
+0
+vitesse
+5
+agilite
+5
+item1
+potion_force_base
+item2
+potion_defence_base
+item3
+potion_endurance_base
+max vie
+110
+max energie
+150
+died_in_game
+False
+end_game
+False
+item_bag
+["potion_force_base", "potion_defence_base", "potion_endurance_base"]
+TUTO_ACHIEVE
+room_already_logged
+heal_room
+False
+room_passed
+1
+current_room
+0
+switch_collision
+[{'id': 1, 'rect': 'bas', 'type': 'switch'}]
+stage
+1
+boss_room
+False
+nb_room
+12
+room_exist
+[[0, 0], [0, -1], [1, -1], [1, 0], [2, 0], [2, -1], [2, -2], [3, -2], [4, -2], [4, -3], [4, -4], [4, -5]]
+room_visited
+[[0, 0]]
+room_actu
+[0, 0]
+can_switch
+False
+going_back
+False
+cooldown
+0
+have_heal
+0
+rooms
+[{"ennemie 1": {"categorie": "ogre", "type": "ennemie", "rect": [250, 300, 200, 200], "img": "image_site/image_ogre.png", "data_ennemie": {"reflexe": 5, "id": 2, "nom": "Vassily", "vie": 80, "vie_max": 80, "force": 2, "agilite": 2, "vol de vie": 0, "magie": 0, "vitesse": 2, "energie_max": 30, "energie": 30, "level": 1, "loot": {"gold_drop": 10, "xp_drop": 100, "item_drop": {"nom_variable": "poudre Thorkellique", "nom": "Thorkellite", "bonus_endurance": 0, "bonus_defence": 0, "bonus_attaque": 0.5, "fonction": "attaque", "img": "image_site/thorkellite_potion_rpg.png", "description": "Il est dit que c'est le grand Thorkell qui a cr\u00e9\u00e9 cette potion. Je me demande si je deviendrais aussi fort que lui.", "id": {"line": 5, "coupage": [0, 23, 49, 69, 95], "height": 111}}, "chance_drop": 45}, "abilite": [{"nom": "Masse volante", "degat": 10, "cout": 0, "vitesse": 9, "damage_reduction": 0, "ulti": false, "type": "force"}, {"nom": "droite chantante", "degat": 15, "cout": 5, "vitesse": 8, "damage_reduction": 0, "ulti": false, "type": "force"}]}, "etat": "vivant", "mort_def": false}, "ennemie 2": {"categorie": "ogre", "type": "ennemie", "rect": [250, 100, 200, 200], "img": "image_site/image_ogre.png", "data_ennemie": {"reflexe": 5, "id": 1, "nom": "Kurdash", "vie": 60, "vie_max": 60, "force": 2, "agilite": 2, "vol de vie": 0, "magie": 0, "vitesse": 2, "energie_max": 30, "energie": 30, "level": 1, "loot": {"gold_drop": 20, "xp_drop": 500, "item_drop": {"nom_variable": "poudre Thorkellique", "nom": "Thorkellite", "bonus_endurance": 0, "bonus_defence": 0, "bonus_attaque": 0.5, "fonction": "attaque", "img": "image_site/thorkellite_potion_rpg.png", "description": "Il est dit que c'est le grand Thorkell qui a cr\u00e9\u00e9 cette potion. Je me demande si je deviendrais aussi fort que lui.", "id": {"line": 5, "coupage": [0, 23, 49, 69, 95], "height": 111}}, "chance_drop": 45}, "abilite": [{"nom": "morsure", "degat": 8, "cout": 0, "vitesse": 9, "damage_reduction": 0, "ulti": false, "type": "force"}, {"nom": "Grosse morsure", "degat": 14, "cout": 5, "vitesse": 8, "damage_reduction": 0, "ulti": false, "type": "force"}]}, "etat": "vivant", "mort_def": false}, "switch_1": {"id": 1, "rect": "bas", "type": "switch"}, "switch_2": null}]
+collision1
+[{"categorie": "ogre", "type": "ennemie", "rect": [250, 300, 200, 200], "img": "image_site/image_ogre.png", "data_ennemie": {"reflexe": 5, "id": 2, "nom": "Vassily", "vie": 80, "vie_max": 80, "force": 2, "agilite": 2, "vol de vie": 0, "magie": 0, "vitesse": 2, "energie_max": 30, "energie": 30, "level": 1, "loot": {"gold_drop": 10, "xp_drop": 100, "item_drop": {"nom_variable": "poudre Thorkellique", "nom": "Thorkellite", "bonus_endurance": 0, "bonus_defence": 0, "bonus_attaque": 0.5, "fonction": "attaque", "img": "image_site/thorkellite_potion_rpg.png", "description": "Il est dit que c'est le grand Thorkell qui a cr\u00e9\u00e9 cette potion. Je me demande si je deviendrais aussi fort que lui.", "id": {"line": 5, "coupage": [0, 23, 49, 69, 95], "height": 111}}, "chance_drop": 45}, "abilite": [{"nom": "Masse volante", "degat": 10, "cout": 0, "vitesse": 9, "damage_reduction": 0, "ulti": false, "type": "force"}, {"nom": "droite chantante", "degat": 15, "cout": 5, "vitesse": 8, "damage_reduction": 0, "ulti": false, "type": "force"}]}, "etat": "vivant", "mort_def": false}, {"categorie": "ogre", "type": "ennemie", "rect": [250, 100, 200, 200], "img": "image_site/image_ogre.png", "data_ennemie": {"reflexe": 5, "id": 1, "nom": "Kurdash", "vie": 60, "vie_max": 60, "force": 2, "agilite": 2, "vol de vie": 0, "magie": 0, "vitesse": 2, "energie_max": 30, "energie": 30, "level": 1, "loot": {"gold_drop": 20, "xp_drop": 500, "item_drop": {"nom_variable": "poudre Thorkellique", "nom": "Thorkellite", "bonus_endurance": 0, "bonus_defence": 0, "bonus_attaque": 0.5, "fonction": "attaque", "img": "image_site/thorkellite_potion_rpg.png", "description": "Il est dit que c'est le grand Thorkell qui a cr\u00e9\u00e9 cette potion. Je me demande si je deviendrais aussi fort que lui.", "id": {"line": 5, "coupage": [0, 23, 49, 69, 95], "height": 111}}, "chance_drop": 45}, "abilite": [{"nom": "morsure", "degat": 8, "cout": 0, "vitesse": 9, "damage_reduction": 0, "ulti": false, "type": "force"}, {"nom": "Grosse morsure", "degat": 14, "cout": 5, "vitesse": 8, "damage_reduction": 0, "ulti": false, "type": "force"}]}, "etat": "vivant", "mort_def": false}, {"id": 1, "rect": "bas", "type": "switch"}, null]
+collision2
+[[250, 300, 200, 200], [250, 100, 200, 200]]
+heal_log
+[false, false]
+recup_switch
+[[{"id": 1, "rect": "haut", "type": "switch"}], [{"id": 1, "rect": "bas", "type": "switch"}]]
+recup_stagz
+[1, 1]
+went_back
+False

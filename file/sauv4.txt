@@ -1,0 +1,8 @@
+save : 4
+save : 5
+nom
+f
+class
+Assassin
+
+TUTO_ACHIEVE
