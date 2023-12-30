@@ -3596,7 +3596,7 @@ def py_start():
                             if not "switch" in keys:                            
                                 if values["etat"] == "vivant" and values["mort_def"] == False:
                                     img = dict_data[(i,values["img"])]
-                                    pygame.draw.rect(screen,(200,0,0),(values["rect"][0],values["rect"][1],255,210),1)
+                                    
                                     screen.blit(img, pygame.Rect(values["rect"]))
                                     draw_in(f"~ {values['categorie']} ~", 0, pygame.Rect(values["rect"]), 20,
                                             (255, 255, 255), csm, pygame.Rect(values["rect"][0],values["rect"][1],255,210).w / 2 -
@@ -3785,6 +3785,7 @@ def py_start():
         b = 0        
         for i in collision_:
             collide_png = False
+            print(mask_ennemie,b)
             img = pygame.image.load(mask_ennemie[b]).convert()
             img.set_colorkey((0,0,0))
             img_resize = pygame.transform.scale(img,resize_ennemie)
@@ -4642,7 +4643,8 @@ def py_start():
                                 if pygame.mouse.get_pressed()[0]:
                                     if d == "retour":
                                         if joueur["stat_joueur"]["energie"] >= joueur["stat_joueur"]["energie_max"] / 2:
-                                            sortir_combat(collisionneur, pos_img1, collision_tolerance)
+                                            pos_img1.left = collisionneur.left - 60
+                                            print(pos_img1,collisionneur)
                                             combat = False
                                             debut_combat = False
                                             joueur["stat_joueur"]["energie"] -= 20
@@ -4700,6 +4702,7 @@ def py_start():
                             pass
                 return True
             can_switch = look_for_can_switch(rooms[current_room],i)
+            can_switch = True
             if pos_img1.colliderect(pygame.Rect(inverse_dict_equivalent_switch[i["rect"]])) and can_switch:
                 rooms,switch_collision,stage,heal_room,current_room,room_passed,boss_room,going_back = change_room(rooms, current_room, nb_room, room_passed, i["id"])
                 collisionneur = pygame.Rect(inverse_dict_equivalent_switch[i["rect"]])
