@@ -76,6 +76,12 @@ file_extension = []
 file_name = []
 global file_full
 file_full = ""
+dirr = os.listdir()
+if not "file" in dirr:
+    os.makedirs("file")
+if not "key" in dirr:
+    os.makedirs("key")
+
 for file in os.listdir("file"):
     split_tup = os.path.splitext(file)
     # extract the file name and extension
